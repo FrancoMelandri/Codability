@@ -9,7 +9,7 @@ namespace BinaryGap
             const int CNT_ZEROES_CURRENT = 0;
             const int CNT_ZEROES_MAX = 1;
 
-            int startingFrom = (int)Math.Ceiling(System.Math.Log(N, 2));            
+            int startingFrom = (int)Math.Floor(System.Math.Log(N, 2));            
             int[] counters = new[] { 0, 0 }; 
 
             for (int exp = startingFrom; exp >= 0; exp--) {
