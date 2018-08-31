@@ -37,5 +37,15 @@ namespace CyclicRotation
 
             Assert.IsTrue(expected.SequenceEqual(result));
         }
+
+        [Test]
+        public void ShouldReturnShiftedyArrayBy42() 
+        {
+            int[] input = new [] {1, 1, 2, 3, 5};
+            int[] expected = new [] {3, 5, 1, 1, 2};
+            int[] result = sut.solution(input, 42);
+
+            Assert.IsTrue(expected.SequenceEqual(result));
+        }
     }
 }
