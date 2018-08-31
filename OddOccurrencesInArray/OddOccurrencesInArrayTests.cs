@@ -8,9 +8,10 @@ namespace OddOccurrencesInArray
         private Solution sut = new Solution();
 
         [Test]
-        public void ShouldReturnNoOdd() 
+        public void ShouldReturn7() 
         {
-            Assert.AreEqual(new Solution().solution(new int [] {}), 0);
+            int[] input = new int[] { 9, 3, 9, 3, 9, 7, 9 }; 
+            Assert.AreEqual(7, new Solution().solution(input));
         }
     }
 }
