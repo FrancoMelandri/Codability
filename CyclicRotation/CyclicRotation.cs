@@ -8,7 +8,7 @@ namespace CyclicRotation
         public int[] solution(int[] A, int K) {
             return A
                     .Concat(A)
-                    .Skip(A.Length - ( K % A.Length))
+                    .Skip(A.Length - (K % A.Length))
                     .Take(A.Length)
                     .ToArray();
         }
