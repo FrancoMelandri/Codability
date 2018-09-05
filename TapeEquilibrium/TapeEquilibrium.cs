@@ -7,18 +7,13 @@ namespace TapeEquilibrium
     {
         public int solution(int[] A) {
             int minDiff = int.MaxValue;
+            Int64 sumLeft = 0;
+            Int64 sumRigth = A.Sum(i => (Int64)i);
+
             for (int i = 1; i < A.Length; i++) {
-
-                Int64 sumLeft = A.Take(i).Sum();
-                Int64 sumRigth = A.Skip(i).Take(A.Length - i).Sum();
-                Int64 diff = Math.Abs(sumLeft - sumRigth);
-
-                if (diff < minDiff) minDiff = (int)diff;
-
-                Console.Error.WriteLine("{0} > {1} > {2} : {3}", i, 
-                                                                sumLeft, 
-                                                                sumRigth,
-                                                                diff);
+                sumLeft += A[i - 1];
+                sumRigth -= A[i - 1];
+                minDiff = (int)Math.Min( Math.Abs(sumLeft - sumRigth), minDiff);
             }
             return minDiff;
         }
