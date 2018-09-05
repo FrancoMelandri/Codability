@@ -5,10 +5,13 @@ namespace TapeEquilibrium
     [TestFixture]
     public class TapeEquilibriumTests
     {
+        Solution sut = new Solution();
+        
         [Test]
         public void ShouldReturnEmptyDetail() 
         {
-            Assert.AreEqual(new Solution().solution(new int[] {}), 0);
+            int[] input = new int[] {3, 1, 2, 4, 3};
+            Assert.AreEqual(1, sut.solution(input));
         }
     }
 }
