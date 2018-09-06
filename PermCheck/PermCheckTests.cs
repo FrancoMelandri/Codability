@@ -27,5 +27,12 @@ namespace PermCheck
             int[] input = new [] { 1, 2, 4};
             Assert.AreEqual(0, new Solution().solution(input));
         }
+
+        // [Test]
+        // public void ShouldReturnKoAntiSum() 
+        // {
+        //     int[] input = new [] { 1, 1, 4 };
+        //     Assert.AreEqual(0, new Solution().solution(input));
+        // }
     }
 }
