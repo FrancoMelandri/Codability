@@ -1,16 +1,51 @@
+You are given N counters, initially set to 0, and you have two possible operations on them:
 
-A ***binary gap*** within a positive integer N is any maximal sequence of consecutive zeros that is surrounded by ones at both ends in the binary representation of N.
+increase(X) − counter X is increased by 1,
+max counter − all counters are set to the maximum value of any counter.
+A non-empty array A of M integers is given. This array represents consecutive operations:
 
-For example, number 9 has binary representation 1001 and contains a binary gap of length 2. The number 529 has binary representation 1000010001 and contains two binary gaps: one of length 4 and one of length 3. The number 20 has binary representation 10100 and contains one binary gap of length 1. The number 15 has binary representation 1111 and has no binary gaps. The number 32 has binary representation 100000 and has no binary gaps.
+if A[K] = X, such that 1 ≤ X ≤ N, then operation K is increase(X),
+if A[K] = N + 1 then operation K is max counter.
+For example, given integer N = 5 and array A such that:
+
+    A[0] = 3
+    A[1] = 4
+    A[2] = 4
+    A[3] = 6
+    A[4] = 1
+    A[5] = 4
+    A[6] = 4
+the values of the counters after each consecutive operation will be:
+
+    (0, 0, 1, 0, 0)
+    (0, 0, 1, 1, 0)
+    (0, 0, 1, 2, 0)
+    (2, 2, 2, 2, 2)
+    (3, 2, 2, 2, 2)
+    (3, 2, 2, 3, 2)
+    (3, 2, 2, 4, 2)
+The goal is to calculate the value of every counter after all operations.
 
 Write a function:
 
-```class Solution { public int solution(int N); }```
+```class Solution { public int[] solution(int N, int[] A); }```
 
-that, given a positive integer N, returns the length of its longest binary gap. The function should return 0 if N doesn't contain a binary gap.
+that, given an integer N and a non-empty array A consisting of M integers, returns a sequence of integers representing the values of the counters.
 
-For example, given N = 1041 the function should return 5, because N has binary representation 10000010001 and so its longest binary gap is of length 5. Given N = 32 the function should return 0, because N has binary representation '100000' and thus no binary gaps.
+Result array should be returned as an array of integers.
+
+For example, given:
+
+    A[0] = 3
+    A[1] = 4
+    A[2] = 4
+    A[3] = 6
+    A[4] = 1
+    A[5] = 4
+    A[6] = 4
+the function should return [3, 2, 2, 4, 2], as explained above.
 
 Write an efficient algorithm for the following assumptions:
 
-N is an integer within the range [1..2,147,483,647].
+N and M are integers within the range [1..100,000];
+each element of array A is an integer within the range [1..N + 1].
