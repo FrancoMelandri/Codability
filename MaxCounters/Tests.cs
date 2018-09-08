@@ -30,5 +30,17 @@ namespace MaxCounters
             Assert.AreEqual(3, result[3]);
             Assert.AreEqual(3, result[4]);
         }
+    
+        [Test]
+        public void ShouldReturnOk2() {
+            int[] input = new int[] { 3, 4, 4, 1, 1, 4, 4};
+            int[] result = sut.solution(5, input);
+            
+            Assert.AreEqual(2, result[0]);
+            Assert.AreEqual(0, result[1]);
+            Assert.AreEqual(1, result[2]);
+            Assert.AreEqual(4, result[3]);
+            Assert.AreEqual(0, result[4]);
+        }
     }
 }
