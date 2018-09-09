@@ -9,7 +9,31 @@ namespace PassingCars
 
         [Test]
         public void ShouldReturnOk() {
-            int[] input = new int[] { };
+            int[] input = new int[] { 0, 1, 0, 1, 1};
+            int result = sut.solution(input);
+        
+            Assert.AreEqual(5, result);
+        }
+
+        [Test]
+        public void ShouldReturnOk1() {
+            int[] input = new int[] { 0, 1, 0, 1};
+            int result = sut.solution(input);
+        
+            Assert.AreEqual(3, result);
+        }
+
+        [Test]
+        public void ShouldReturnOk2() {
+            int[] input = new int[] { 0, 0, 0, 0};
+            int result = sut.solution(input);
+        
+            Assert.AreEqual(0, result);
+        }
+
+        [Test]
+        public void ShouldReturnOk3() {
+            int[] input = new int[] { 1, 1, 1, 1};
             int result = sut.solution(input);
         
             Assert.AreEqual(0, result);
