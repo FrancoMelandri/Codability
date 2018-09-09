@@ -1,6 +1,6 @@
 # CountDiv
 
-Compute number of integers divisible by k in range [a..b
+Compute number of integers divisible by k in range [a..b].
 
 Write a function:
 
