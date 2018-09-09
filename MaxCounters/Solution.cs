@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Linq;
 
 namespace MaxCounters
 {
@@ -7,13 +6,18 @@ namespace MaxCounters
     {
         public int[] solution(int N, int[] A) {
             int[] result = new int[N];
-            int max = 0;
-            for (int i = 0; i < A.Length; i++) {
-                if (A[i] <= N) {
-                    max = Math.Max (++result[A[i] -1], max);
+            int currentMax = 0;
+            int lastMax = 0;
+            for (int K = 0; K < A.Length; K++) {
+                if (A[K] >=0 && A[K] <= N) {
+                    result[A[K] - 1] = Math.Max (result[A[K] - 1], lastMax);
+                    currentMax = Math.Max (++result[A[K] - 1], currentMax);
                 }
                 else
-                    result = Enumerable.Repeat(max, N).ToArray();
+                    lastMax = currentMax;
+            }
+            for (int i = 0; i < N; i++) {
+                result[i] = Math.Max (result[i], lastMax);
             }
             return result;
         }
