@@ -13,7 +13,7 @@ namespace PassingCars
                 else
                     counter += step;
             }
-            return counter;
+            return counter > 1000000000 ? -1 : counter;
         }
     }
 }

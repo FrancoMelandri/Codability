@@ -70,5 +70,15 @@ namespace PassingCars
         
             Assert.AreEqual(0, result);
         }
+
+        [Test]
+        public void ShouldReturnOk9() {
+            int[] input = new int[100000];
+            for (int i = 1; i < 100000; i+= 2)
+                input[i] = 1;
+            int result = sut.solution(input);
+        
+            Assert.AreEqual(-1, result);
+        }
     }
 }
